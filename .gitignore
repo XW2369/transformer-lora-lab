@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Data / weights (never commit large binaries)
+data/
+checkpoints/
+outputs/
+*.pt
+*.pth
+*.safetensors
+*.arrow
+*.bin
+
+# Notes
+手推草稿/
+打卡日志/
+Day5-Transformer与大模型/
+培训专业/
