@@ -1,6 +1,7 @@
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
+from torch import nn
+
 
 def scaled_dot_product_attention(q, k, v, mask=None, dropout_p=0.0):
     """
@@ -119,6 +120,6 @@ if __name__ == "__main__":
 
     print("ref  shape:", tuple(o_ref.shape))
     print("mine shape:", tuple(o_mine.shape))
-    print("max abs diff: %.3e" % diff)
+    print(f"max abs diff: {diff:.3e}")
     assert diff < 1e-5, f"对拍未通过: {diff}"
     print("[OK] 手写 MHA 与 nn.MultiheadAttention 对拍通过")

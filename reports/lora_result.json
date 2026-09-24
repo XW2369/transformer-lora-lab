@@ -1,0 +1,35 @@
+{
+  "model": "bert-base-chinese",
+  "total_params": 102564098,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "trainable_params": 294912,
+  "trainable_ratio": 0.0028753921279549496,
+  "replaced_modules": 24,
+  "n_train": 1000,
+  "n_test": 300,
+  "max_len": 48,
+  "epochs": 3,
+  "lr": 0.0001,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.7016,
+      "acc": 0.6233
+    },
+    {
+      "epoch": 2,
+      "loss": 0.6363,
+      "acc": 0.68
+    },
+    {
+      "epoch": 3,
+      "loss": 0.4848,
+      "acc": 0.8367
+    }
+  ],
+  "acc_before": 0.42,
+  "acc_after": 0.8366666666666667,
+  "acc_delta": 0.4166666666666667,
+  "elapsed_sec": 489.5
+}
