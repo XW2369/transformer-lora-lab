@@ -50,7 +50,11 @@ def test_inject_lora_replaces_only_targets_and_freezes_base():
     assert isinstance(model.query, LoRALinear)
     assert isinstance(model.other, nn.Linear)
     assert model.other.weight.requires_grad is False
-    trainable, total, ratio = lora_param_ratio(model)  # 每个 LoRA: 2*8 + 8*2 = 32；两个 = 64
+    trainable, total, ratio = lora_param_ratio(model)
+    assert trainable == 64
+    assert total == 280
+    assert 0 < ratio < 1
+
     assert trainable == 64
     assert 0 < ratio < 1
 
