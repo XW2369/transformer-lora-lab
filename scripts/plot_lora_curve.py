@@ -22,9 +22,9 @@ ax = axes[0]
 ax.bar(["before", "after"], [data["acc_before"], data["acc_after"]], color=["#9aa5b1", "#2f7ed8"])
 ax.set_ylim(0, 1.0)
 ax.set_ylabel("accuracy")
-ax.set_title("LoRA fine-tuning: +%.2f pp" % (data["acc_delta"] * 100))
+ax.set_title(f"LoRA fine-tuning: +{data['acc_delta'] * 100:.2f} pp")
 for i, v in enumerate([data["acc_before"], data["acc_after"]]):
-    ax.text(i, v + 0.02, "%.4f" % v, ha="center")
+    ax.text(i, v + 0.02, f"{v:.4f}", ha="center")
 
 ax = axes[1]
 ax.plot(epochs, accs, marker="o", label="test acc")
@@ -36,14 +36,9 @@ ax.legend()
 ax.grid(alpha=0.3)
 
 fig.suptitle(
-    "bert-base-chinese + LoRA(r=%d, alpha=%d, trainable=%.4f%%) | n_train=%d n_test=%d"
-    % (
-        data["lora_r"],
-        data["lora_alpha"],
-        data["trainable_ratio"] * 100,
-        data["n_train"],
-        data["n_test"],
-    )
+    f"bert-base-chinese + LoRA(r={data['lora_r']}, alpha={data['lora_alpha']}, "
+    f"trainable={data['trainable_ratio'] * 100:.4f}%) | "
+    f"n_train={data['n_train']} n_test={data['n_test']}"
 )
 fig.tight_layout()
 out = REPORTS / "figures" / "acc_compare.png"
