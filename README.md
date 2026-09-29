@@ -1,6 +1,6 @@
 # transformer-lora-lab
 
-Day5：手写 Transformer + LoRA 微调（CPU 环境，`bert-base-chinese` + ChnSentiCorp 中文情感二分类）
+手写 Transformer 组件与 LoRA 参数高效微调（CPU 环境，`bert-base-chinese` + ChnSentiCorp 中文情感二分类）
 
 ## 项目结构
 
